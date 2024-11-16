@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map_canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC0UEhZ0o0ZknVbY0aVuUs7cwqt29VnFho&sensor=false">
+    </script>
+<script type="text/javascript">
+var map;
+var poligono;
+var marker;
+
+function initialize() {
+  var myLatLng = new google.maps.LatLng(-26.930, -48.946);
+  var mapOptions = {
+    zoom: 18,	
+    center: myLatLng,
+	disableDoubleClickZoom: true,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  map = new google.maps.Map(document.getElementById("map_canvas"),
+      mapOptions);
+
+  poligono = new google.maps.Polygon({    
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 3,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35
+  });
+
+  poligono.setMap(map);
+
+  google.maps.event.addListener(map, 'click', addLatLng);
+  google.maps.event.addListener(map, 'rightclick', verificaPonto);
+  google.maps.event.addListener(poligono, 'rightclick', verificaPonto);
+}
+function verificaPonto(event){
+	if ( !marker ) {
+        marker = new google.maps.Marker({ map: map });
+    }    	
+	try{		
+		if(google.maps.geometry.poly.containsLocation(event.latLng,poligono)==true){
+			marker.setIcon("http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png");
+		}else{
+			marker.setIcon("http://www.google.com/intl/en_us/mapfiles/ms/micons/red-dot.png");
+		}
+	}catch(err){
+		alert("erro");
+	}
+	marker.setPosition(event.latLng);		
+}
+
+function addLatLng(event) {
+  var vertices = poligono.getPath();
+  vertices.push(event.latLng);
+  var marker2 = new google.maps.Marker({ map: map });
+  marker2.setPosition(event.latLng);	
+  google.maps.event.addListener(marker2, "dblclick", function() {
+	var vertices=poligono.getPath();	
+	vertices.removeAt(vertices.indexOf(marker2.position));
+    marker2.setMap(null);
+});
+}
+
+</script>
+  </head>
+  <body onload="initialize()">
+    <div id="map_canvas" style="width:100%; height:100%"></div>
+  </body>
+</html>

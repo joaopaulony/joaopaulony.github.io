@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<!-- Aqui o Meta do Ma e o Style do Maps --> 
+
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+		 <style type="text/css">
+    	  html { height: 100% }
+     	  body { height: 100%; margin: 0; padding: 0 }
+     	  #map_canvas { height: 100% }
+    	</style>
+
+    	<!-- Aqui o Meta do Ma e o Style do Maps --> 
+
+    	<!-- Script do Maps -->
+
+    	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=coloque_sua_chave_aqui” >
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-34.397, 150.644),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+      }
+    </script>
+
+    <!-- Script do Maps -->
+
+		<title> Contacte-me </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+		 <div id="map_canvas" style="width:100%; height:100%"></div> <!-- Aqui a Div do Maps -->
+
+			<!-- Cabeçalho (Header) -->
+				<header id="header">
+					<h1 id="logo"><a href="inicio.html">João Paulo CS</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="inicio.html">Inicio</a></li>
+							<li>
+								<a href="#">Sobre</a>
+								<ul>
+									<li><a href="esquerdalateral.html">Projetos</a></li>
+								</ul>
+							</li>
+							<li><a href="contato.html" class="button primary">Contato</a></li>
+							
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Principal (main) -->
+				<div id="main" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Contacte-me</h2>
+							<p>No aguardo de contato de sua parte, coloco-me à disposição para prestar-lhes mais esclarecimentos.</p>
+						</header>
+
+						<!-- Texto -->
+							<section>
+								<h3>Prezados senhores(as)</h3>
+								<p><b>Em busca de nova proposta de trabalho na área de Programação apresento-lhes meu currículo em anexo <a href="#">neste link</a>.</b></p>
+
+								<hr />
+							</section>
+
+						<!-- Formato caixa de contato -->
+							<section>
+								<h3>Caixa de contato</h3>
+								<form method="post" action="#">
+									<div class="row gtr-uniform gtr-50">
+										<div class="col-6 col-12-xsmall">
+											<input type="text" name="name" id="name" value="" placeholder="Nome" />
+										</div>
+										<div class="col-6 col-12-xsmall">
+											<input type="email" name="email" id="email" value="" placeholder="Email" />
+										</div>
+										<div class="col-12">
+											<select name="category" id="category">
+												<option value="">- Categoria -</option>
+												<option value="1">Recursos Humanos - Empresa</option>
+												<option value="1">Networking</option>
+												<option value="1">Duvidas</option>
+												<option value="1">- Nenhuma listada -</option>
+											</select>
+										</div>
+										<div class="col-4 col-12-medium">
+											<input type="radio" id="priority-low" name="priority" checked>
+											<label for="priority-low">Baixa Prioridade</label>
+										</div>
+										<div class="col-4 col-12-medium">
+											<input type="radio" id="priority-normal" name="priority">
+											<label for="priority-normal">Normal Prioridade</label>
+										</div>
+										<div class="col-4 col-12-medium">
+											<input type="radio" id="priority-high" name="priority">
+											<label for="priority-high">Alta Prioridade</label>
+										</div>
+										<div class="col-6 col-12-medium">
+											<input type="checkbox" id="copy" name="copy">
+											<label for="copy"> Me enviar uma copia dessa mensagem.</label>
+										</div>
+										<div class="col-6 col-12-medium">
+											<input type="checkbox" id="human" name="human" checked>
+											<label for="human">Eu sou um Humano e não um robô</label>
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="Digite a sua mensagem..." rows="6"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" value="Enviar mensagem" class="primary" /></li>
+												<li><input type="reset" value="Limpar" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						
+					</div>
+				</div>
+
+			<!-- Rodapé -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Todos os direitos reservados.</li><li>João Paulo CS</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- JavaScripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
